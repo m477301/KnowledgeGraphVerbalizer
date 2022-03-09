@@ -1,8 +1,23 @@
+<<<<<<< HEAD
 import { useEffect } from "react";
 import Header from './Components/Header'
 import Button from './Components/Buttons'
 import imageOne from './A-knowledge-graph-structure.png'
 import { queryWikidataWithSparql } from "./Wikidata/APIWrapper";
+=======
+import React from 'react';
+import './App.css';
+import NavBar from './Components/NavigationBar/NavBar';
+import { BrowserRouter as Router, Routes,Route} from 'react-router-dom';
+import Home from './Components/websitePages/Home';
+import Instructions from './Components/websitePages/Instructions';
+import StartQuery from './Components/websitePages/Start';
+import About from './Components/websitePages/About';
+import Contact from './Components/websitePages/Contact';
+
+import Button from './Components/Buttons';
+
+>>>>>>> e473b90 (updated user interface)
 
 function App() {
   useEffect(() => {
@@ -13,21 +28,24 @@ function App() {
     fetchData();
   }, []);
   return (
-    <div className='container'>
-      <div className='header'>
-        <Header/>
-        <img src={imageOne} className="image" alt></img>
-          <div className="button">
-             <Button text='Submit Knowledge Graph' >
-             </Button>
-               <div className='paragraph'>
-               <p>The verbalisation of the Knowledge Graph will appear here</p>
-              </div>
-          </div>  
-       </div>
-    </div> 
-  );
-}
+    <>
+      <Router>
+      <NavBar/>
+        <Routes>
+          <Route path="/" exact element={<Home/>} />
+          <Route path="/instructions"  element={<Instructions/>} />
+          <Route path="/start"  element={<StartQuery/>} />
+          <Route path="/about"  element={<About/>} />
+          <Route path="/contact"  element={<Contact/>} />
 
+      </Routes>
+        
+      </Router>
+
+    </>
+      
+      );
+    }
+   
 export default App;
 
