@@ -17,12 +17,12 @@ export const MenuItems=[
         cName: 'menuLinks'
     },
     {
-        title: 'About the Team',
+        title: 'About The Team',
         url: '/about',
         cName: 'menuLinks'
     },
     {
-        title: 'Contact us',
+        title: 'Contact Us',
         url: '/contact',
         cName: 'menuLinks'
     },

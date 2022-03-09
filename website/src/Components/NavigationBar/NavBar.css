@@ -1,5 +1,5 @@
 .navBar{
-    background-color:navy;
+    background-color:rgb(73, 73, 238);
     height: 80px;
     display: flex;
     justify-content: start;
@@ -60,7 +60,7 @@
     border-radius: 4px;
 } 
 .menuLinks a:hover{
-    background-color: aqua;
+    background-color: rgb(95, 218, 70);
 }
 
 .navMenuItems{
