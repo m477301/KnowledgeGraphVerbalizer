@@ -7,15 +7,14 @@ function Home() {
   return (
       <>
         <div className='home'>
-        <p style ={{display: 'inline-block', alignItems: 'center', textAlign: 'center'}}>
+        <p style ={{}}>
         <h1>Hey Knowledge <br/> Graph,<br/>
                 tell me something!</h1>   
           
         </p>
 
-        <img src={imageOne} className='image' alt='' class="center" 
-        width={300}
-        height={600}/>
+        <img src={imageOne} className='image' alt='' 
+        />
                 
           <button className='button' >
               Click to get Started
