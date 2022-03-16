@@ -10,7 +10,6 @@ import './App.css';
 import NavBar from './Components/NavigationBar/NavBar';
 import { BrowserRouter as Router, Routes,Route} from 'react-router-dom';
 import Home from './Components/websitePages/Home';
-import Instructions from './Components/websitePages/Instructions';
 import StartQuery from './Components/websitePages/Start';
 import About from './Components/websitePages/About';
 import Contact from './Components/websitePages/Contact';
@@ -33,10 +32,10 @@ function App() {
       <NavBar/>
         <Routes>
           <Route path="/" exact element={<Home/>} />
-          <Route path="/instructions"  element={<Instructions/>} />
           <Route path="/start"  element={<StartQuery/>} />
           <Route path="/about"  element={<About/>} />
           <Route path="/contact"  element={<Contact/>} />
+          <Route path="/start" element={<Home.Button/>}/>
 
       </Routes>
         

@@ -1,14 +1,10 @@
 import React from "react";
 
+
 export const MenuItems=[
     {
         title: 'Home',
         url: "/",
-        cName: 'menuLinks'
-    },
-    {
-        title: 'Instructions',
-        url: "/instructions",
         cName: 'menuLinks'
     },
     {

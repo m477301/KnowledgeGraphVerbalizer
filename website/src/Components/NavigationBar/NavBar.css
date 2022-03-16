@@ -1,63 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+.logo{
+    /* em= measuremnt for margin and padding 
+    1em=16 pixels
+    rem= sizing for font sizes that are relative*/
+    margin:1em;
+    font-family: 'Poppins' sans-serif;
+    text-decoration:none;
+    font-size:2rem;
+    color:black;
+    font-weight:bold;
+    
+}
 .navBar{
-    background-color:rgb(73, 73, 238);
-    height: 80px;
     display: flex;
-    justify-content: start;
-    align-items: center;
+    justify-content: space-between;
+    background-color:rgb(73, 73, 238);
+    height: 90px;
 }
 .menuBars{
     color:black;
-    margin-left: 2rem;
-    font-size: 2rem;
-    background: none;
+    width: 2em;
+    margin-top:0.5em;
+    font-size:2.5rem;
+    cursor: pointer;
     
+}
+/* float is a way of pushing things ot the right*/
+.closeMenuBars{
+    float: right;
+    margin: 3em;
+    width:2.5em;
+
 }
 .navBarToggle {
     background-color: white;
-    width: 100%;
+    width: 30%;
     height: 80px;
     display:flex;
-    justify-content: start;
+    justify-content: left;
     align-items: center;
   }
-  
+  /*navMenu is the drop down that contains items to click on */
 .navMenu{
-    background-color: whitesmoke;
-    width: 250px;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
     position: fixed;
-    top: 0;
-    right: -100%; 
-    transition: 850ms;
-    
-}
+    right:0;
+    top:0;
+    background-color: whitesmoke;
+    height: 100vh;
+    width:50%;
+    text-transform: uppercase;
+    z-index: 2;
+    transform: translateX(100%);
+    transition: transform .5s ease-in-out;
 
+}
 .navMenu.active{
-    right: 0;
-    transition: 350ms;
+    transform: translateX(0%);
 }
 
+/*menuLinks is the contents of the menu*/
 .menuLinks {
-    display:flex;
-    justify-content: start;
-    align-items: center;
-    padding: 8px 0px 0px 16px;
-    list-style: none;
-    height: 60px ;
+    padding: 0;
+    list-style-type: none;
+    margin-top:2em;
 }
-
+/* the individual options a user can click in the menu */
 .menuLinks a{
     color: black;
     text-decoration:none;
-    font-size: 18px;
-    width: 70%;
-    height: 100%;
-    display: flex;
+    display: block;
     align-items: center;
-    padding: 25px 0px 0px 16px;
-    border-radius: 4px;
+    padding-top: 2em;
+    padding-left:4em;
+    padding-bottom:2em;
 } 
 .menuLinks a:hover{
     background-color: rgb(95, 218, 70);
@@ -70,3 +86,43 @@
 span {
     margin-right: 16px;
   }
+
+@media only screen and (min-width:900px){
+    .menuBars{
+        display: none;
+        
+    }
+    .navMenu{
+        transform: translateX(0);
+        position: unset;
+        display: block;
+        width: auto;
+        height: auto;
+        background: none;
+    }
+    .closeMenuBars{
+        display: none;
+    }
+    .navMenuItems{
+        display: flex;
+
+    }
+    .menuLinks{
+        margin:0;
+    }
+    .menuLinks a{
+        margin-top: 0.5em;
+        padding-top:1.5em;
+        padding-left: 0.5em;
+        padding-right: 0.3em;
+        padding-bottom: 1.5;
+        align-items: center;
+
+    }
+    .navBarToggle{
+        display: none;
+    }
+    .menuLinks a:hover{
+        background-color: white;
+    }
+}

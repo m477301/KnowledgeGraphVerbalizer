@@ -11,15 +11,17 @@ const NavBar= () =>{
 
     return(
         <>
-        <div className='navBar'>
+        <header className='navBar'>
+        <a href='#' className='logo'>Knowledge Graph</a>
+
             <Link to='#' className='menuBars'>
                 <FaIcons.FaBars onClick={showDropDownMenu}/>
             </Link>
-        </div>
+        
         <nav className={dropDownMenu ? 'navMenu active' : 'navMenu'}>
             <ul className='navMenuItems' onClick={showDropDownMenu}>
                 <li className='navBarToggle'>
-                    <Link to='#' className='menuBars'>
+                    <Link to='#' className='closeMenuBars'>
                         <FaIcons.FaTimes />
                     </Link>
 
@@ -35,6 +37,7 @@ const NavBar= () =>{
                 })}
             </ul>
         </nav>
+        </header>
     </>
     );
   }
