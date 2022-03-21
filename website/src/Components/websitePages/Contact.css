@@ -1,0 +1,35 @@
+.bannerImage{
+    position: absolute;
+    height:35%;
+    width: 100%;
+    top:5.5em;
+
+}
+.bannerText{
+    position: relative;
+    color: rgb(16, 6, 58);
+    text-align: center;
+    font-size: 3em;
+    top:-3em;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 1fr 2fr 1fr;
+    gap:10%;
+}
+.infoSection{
+    display: flex;
+    align-items: center;
+    font-size: larger;
+    margin-top: -1em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    margin-left: 2em;
+    text-indent: 1.5em;
+}
+.icons{
+    height: 4em;
+    justify-content: center;
+}
