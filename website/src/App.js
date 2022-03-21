@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
+
 import "./App.css";
 import NavBar from "./Components/NavigationBar/NavBar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -8,6 +9,7 @@ import StartQuery from "./Components/websitePages/Start";
 import About from "./Components/websitePages/About";
 import Contact from "./Components/websitePages/Contact";
 import { queryWikidataWithSparql } from "./Wikidata/APIWrapper";
+
 
 import Button from "./Components/Buttons";
 
