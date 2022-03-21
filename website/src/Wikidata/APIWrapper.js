@@ -16,12 +16,12 @@ const url =
 const headers = { Accept: "application/sparql-results+json" };
 
 export const queryWikidataWithSparql = async () => {
-  let randomCity = "lala";
   await axios
     .get(url, { headers })
     .then((response) => {
       console.log(response);
+      return true;
     })
     .catch((e) => console.error(e));
-  return randomCity;
+  return false;
 };
