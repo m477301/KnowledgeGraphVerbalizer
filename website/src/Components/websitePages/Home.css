@@ -1,0 +1,58 @@
+.button {
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  width: 20%;
+  font-family: Arial, Helvetica, sans-serif;
+  position: inherit;
+}
+.button:hover {
+  background-color: white;
+  color: black;
+}
+
+/* vh= view height- whats veiwable in the browser
+  z-index= allows it to fall in or behind elements + has to be with absoulte */
+.homeImage {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 30em;
+  width: 60%;
+  margin-top: 5em;
+  height: 80vh;
+  z-index: -1;
+  background-size: contain;
+  background-position-x: 20%;
+  background-position-y: 20%;
+}
+
+.hero {
+  color: black;
+  height: 90vh;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-top: 2em;
+  line-height: 5.3rem;
+}
+
+@media only screen and (min-width: 600px) {
+  h1 {
+    font-size: 4rem;
+    margin-top: 3em;
+    margin-left: 0.5em;
+    line-height: 5.3rem;
+  }
+  .button {
+    margin-left: 6em;
+  }
+  .button:hover {
+    background-color: white;
+    color: black;
+    border: 3px black;
+  }
+}
