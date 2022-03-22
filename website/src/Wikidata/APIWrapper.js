@@ -1,7 +1,5 @@
-// import { SparqlClient } from "sparql-http-client";
 const axios = require("axios");
 
-const endpointUrl = "https://query.wikidata.org/sparql";
 const sparqlQuery = `SELECT ?subject ?subjectLabel ?predicate ?predicate_label ?object ?objectLabel
 WHERE {
   ?subject ?predicate ?object; wdt:P31 wd:Q5; wdt:P106 wd:Q937857.
@@ -11,17 +9,34 @@ WHERE {
   FILTER((((ISLITERAL(?object)) && (LANGMATCHES(LANG(?object), "en"))) || ((ISLITERAL(?object)) && (LANGMATCHES(LANG(?object), "")))) || (!(ISLITERAL(?object))))
   SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
 } LIMIT 500 # Cutting the result stream after the first 500 lines.`;
-const url =
+const wikidataUrl =
   "https://query.wikidata.org/sparql?query=" + encodeURIComponent(sparqlQuery);
 const headers = { Accept: "application/sparql-results+json" };
 
 export const queryWikidataWithSparql = async () => {
+  let parsedData = [];
   await axios
-    .get(url, { headers })
-    .then((response) => {
-      console.log(response);
-      return true;
-    })
+    .get(wikidataUrl, { headers })
+    .then(
+      ({
+        data: {
+          results: { bindings },
+        },
+      }) => {
+        for (let i = 0; i < bindings.length; i++) {
+          if (bindings[i].predicate_label.value !== "image") {
+            parsedData = [
+              ...parsedData,
+              {
+                subject: bindings[i].subjectLabel.value,
+                predicate: bindings[i].predicate_label.value,
+                object: bindings[i].objectLabel.value,
+              },
+            ];
+          }
+        }
+      }
+    )
     .catch((e) => console.error(e));
-  return false;
+  return parsedData.slice(0, 5);
 };
