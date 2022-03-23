@@ -8,14 +8,15 @@ import About from "./Components/websitePages/About";
 import Contact from "./Components/websitePages/Contact";
 import { queryWikidataWithSparql } from "./Wikidata/APIWrapper";
 import { useEffect } from "react";
-
+import { verbaliseSentences } from "./verblisation/tuto";
 import Button from "./Components/Buttons";
 
 function App() {
   useEffect(() => {
     async function fetchData() {
-      const res = await queryWikidataWithSparql();
-      console.log("RES", res);
+      const lists = await queryWikidataWithSparql();
+      const sentences = verbaliseSentences(lists);
+      console.log(sentences);
     }
     fetchData();
   }, []);

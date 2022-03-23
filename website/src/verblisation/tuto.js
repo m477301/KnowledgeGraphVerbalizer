@@ -1,26 +1,10 @@
 const rosaenlgPug = require('rosaenlg');
 
-let knowedgeGraphs = [
-  {
-      "subject" : 'Eiffel Tower',
-      "verb" : 'is a',
-      "object" : 'place'
-  },
-  {
-      "subject" : 'Eiffel Tower',
-      "verb" : 'is located in',
-      "object" : 'Paris'
-  },
-  {
-      "subject" : 'Paris',
-      "verb" : 'is a',
-      "object" : 'City'
+  export const verbaliseSentences = async (lists) => {
+    const res = rosaenlgPug.renderFile('tuto.pug', {
+      language: 'en_US',
+      lists: lists,
+      cache: true,
+    });
+    return res;
   }
-];
-
-const res = rosaenlgPug.renderFile('tuto.pug', {
-  language: 'en_US',
-  knowedgeGraphs: knowedgeGraphs,
-  cache: true,
-});
-console.log(res);
