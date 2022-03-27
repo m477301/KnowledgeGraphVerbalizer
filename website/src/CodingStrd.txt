@@ -1,0 +1,3 @@
+Variable names to be relevant to their intended purpose
+Function names to be relevant to their intended purpose
+Inlclude error handling where possible
