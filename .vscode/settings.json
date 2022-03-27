@@ -1,0 +1,11 @@
+{
+  "java.project.referencedLibraries": [
+    "lib/**/*.jar",
+    "server/simplenlg-v4.5.0/SimpleNLG-4.5.0.jar",
+    "server/spark-core-2.9.3-javadoc.jar",
+    "server/spark-2.9.3-javadoc.jar",
+    "simplenlg-v4.5.0/SimpleNLG-4.5.0.jar",
+    "simplenlg-v4.5.0/SimpleNLG-4.5.0-javadoc.jar",
+    "simplenlg-v4.5.0/SimpleNLG-4.5.0-sources.jar"
+  ]
+}

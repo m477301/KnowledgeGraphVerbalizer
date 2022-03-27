@@ -1,4 +1,4 @@
-const axios = require("axios");
+import axios from "axios";
 
 const sparqlQuery = `SELECT ?subject ?subjectLabel ?predicate ?predicate_label ?object ?objectLabel
 WHERE {
