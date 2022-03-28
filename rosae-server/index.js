@@ -10,10 +10,10 @@ app.get("/", (req, res) => {
   res.send("Welcome to the Server!");
 });
 
-app.get("/verbalise", async (req, res) => {
-  const knowledgeGraph = await queryWikidataWithSparql();
+app.get("/verbalise/:name", async (req, res) => {
+  const knowledgeGraph = await queryWikidataWithSparql(req.params.name);
   const sentences = await verbaliseSentences(knowledgeGraph);
-  res.send(sentences.replaceAll("<p>", "").replaceAll("</p>", ""));
+  return res.send(sentences.replaceAll("<p>", "").replaceAll("</p>", ""));
 });
 
 app.listen(port, () => {
