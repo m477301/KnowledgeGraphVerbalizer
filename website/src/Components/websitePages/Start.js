@@ -3,7 +3,7 @@ import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import './Start.css';
 function StartQuery() {
   const [paragraph, setParagraph] = useState(null);
   useEffect(() => {
@@ -14,19 +14,37 @@ function StartQuery() {
     }
     fetchData();
   }, []);
+
   if (paragraph) {
     return (
-      <div className="startQuery">
+      <>
+      <h2 className="title">  
+     Fetching Results For Lionel Messi:
+    </h2>
+        <div className="paragraphBox">
         <p>{paragraph}</p>
-      </div>
+    </div>
+
+      </>
+    
     );
   }
 
+
   return (
-    <div className="startQuery">
-      <h1>Loading...</h1>
-    </div>
+    <>
+    <h2 className="title">  
+     Fetching Results For Lionel Messi:
+    </h2>
+      <div className="paragraphBox">
+          <p>Loading...</p>
+      </div>
+
+    </>
+    
+   
   );
 }
+
 
 export default StartQuery;
