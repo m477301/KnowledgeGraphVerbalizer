@@ -4,24 +4,30 @@
     height: 30vh;
     border:3px solid rgb(17, 10, 10);
     padding: 60px;
-    margin-top: 8em;
+    margin-top: 6em;
     margin-left: 2em;
     font-size: 15px;
     font-family: inherit;
 }
 .title{
     margin-top: 2em;
+    font-size:xx-large;
 }
 .resultsButton {
-    background-color: rgb(153, 32, 32);
-    width:5%;
+    background-color: rgb(97, 93, 93);
+    border-color: rgb(172, 169, 169);
+    border-radius: 10px;
+    width:10em;
     height:5vh;
     border: none;
-    padding: 5px;
-    margin: 5px;
+    padding: 8px;
+    margin-top: 2em;
+    margin-left: 2em;
     font-size: 15px;
     font-family: inherit;
-    position: relative;
  /*   top: -140px; */
     left: 0px;
+}
+.resultsButton:hover{
+    background-color: yellow;
 }
