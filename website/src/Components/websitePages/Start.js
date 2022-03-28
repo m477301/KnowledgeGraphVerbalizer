@@ -4,14 +4,27 @@ import "react-dropdown/style.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./Start.css";
+import Speech from "./Speech";
 import { FaTruckLoading } from "react-icons/fa";
+
 function StartQuery() {
   const [paragraph, setParagraph] = useState(null);
   const [textResults, setTextResults] = useState(
     "Results will be shown here..."
   );
 
+  const [queryInput, setQueryInput] = useState("Lionel Messi");
+
+  const updateQuery = (option) => setQueryInput(option);
+
   const showTextResults = (results) => setTextResults(results);
+
+  function handleSelectChange(event) {
+    // console.log(event);
+    updateQuery(event.target.value);
+    //We send this new value to the other server so they can query it
+  }
+
   useEffect(() => {
     async function fetchData() {
       await axios.get("http://localhost:3500/verbalise/Messi").then((res) => {
@@ -24,7 +37,12 @@ function StartQuery() {
   if (paragraph) {
     return (
       <>
-        <h2 className="title">Query selected: Lionel Messi</h2>
+        <select onChange={handleSelectChange}>
+          <option value="Lionel Messi">Lionel Messi</option>
+          <option value="Cristiano Ronaldo">Cristiano Ronaldo</option>
+        </select>
+        setQueryInput
+        <h2 className="title">Query selected: {queryInput}</h2>
         <button
           type="button"
           className="resultsButton"
@@ -35,13 +53,20 @@ function StartQuery() {
         <div className="paragraphBox">
           <p>{textResults}</p>
         </div>
+        <div>
+          <Speech paragraph={paragraph}></Speech>
+        </div>
       </>
     );
   }
 
   return (
     <>
-      <h2 className="title">Query selected: Lionel Messi</h2>
+      <select onChange={handleSelectChange}>
+        <option value="Lionel Messi">Lionel Messi</option>
+        <option value="Cristiano Ronaldo">Cristiano Ronaldo</option>
+      </select>
+      <h2 className="title">Query selected: testing</h2>
       <button
         type="button"
         className="resultsButton"
