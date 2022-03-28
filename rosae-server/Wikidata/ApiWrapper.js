@@ -48,5 +48,5 @@ export const queryWikidataWithSparql = async (name) => {
       }
     )
     .catch((e) => console.error(e));
-  return parsedData.slice(0, 5);
+  return parsedData.slice(0, 10);
 };
