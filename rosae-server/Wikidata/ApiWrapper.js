@@ -22,7 +22,6 @@ const headers = { Accept: "application/sparql-results+json" };
 
 export const queryWikidataWithSparql = async (name) => {
   let parsedData = [];
-  let code = subjects.get("Messi");
   let query = sparqlQueryB + subjects.get(name) + sparqlQueryE;
   console.log(code);
   let dynamicURL =
