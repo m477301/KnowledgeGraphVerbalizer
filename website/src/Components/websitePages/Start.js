@@ -8,7 +8,7 @@ function StartQuery() {
   const [paragraph, setParagraph] = useState(null);
   useEffect(() => {
     async function fetchData() {
-      await axios.get("http://localhost:3500/wikidata").then((res) => {
+      await axios.get("http://localhost:3500/verbalise").then((res) => {
         setParagraph(res.data);
       });
     }
