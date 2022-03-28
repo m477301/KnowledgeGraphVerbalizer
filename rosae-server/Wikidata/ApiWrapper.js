@@ -4,6 +4,13 @@ const subjects = new Map();
 subjects.set("Messi", `wd:Q615`);
 subjects.set("Ronaldo", `wd:Q11571`);
 subjects.set("Mbappe", `wd:Q21621995`);
+subjects.set("Haaland", `wd:Q28967995`);
+subjects.set("Bellingham", `wd:Q66241169`);
+subjects.set("Reus", `wd:Q152377`);
+subjects.set("Malen", `wd:Q24084301`);
+subjects.set("Muller", `wd:Q2426220`);
+subjects.set("Saka", `wd:Q59306386`);
+subjects.set("Bony", `wd:Q370339`);
 
 //  wd:Q21621995
 
