@@ -1,25 +1,79 @@
-import React from 'react'
-import Dropdown from 'react-dropdown';
-import 'react-dropdown/style.css';
+import React from "react";
+import Dropdown from "react-dropdown";
+import "react-dropdown/style.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { FaTruckLoading } from "react-icons/fa";
+function StartQuery() {
+  const [paragraph, setParagraph] = useState(null);
+  const [textResults, setTextResults] = useState(
+    "Results will be shown here..."
+  );
+  const [queryInput, setQueryInput] = useState("Lionel Messi");
 
-export default class DropdownMenu extends React.Component {
-  onChange(event) {
-    console.log("Dropdown Value Changed");
-    console.log("value:", event.currentTarget.value);
+  const updateQuery = (option) => setQueryInput(option);
+
+  const showTextResults = (results) => setTextResults(results);
+
+  function handleSelectChange(event) {
+    // console.log(event);
+    updateQuery(event.target.value);
+    //We send this new value to the other server so they can query it
   }
-  render() {
+
+  useEffect(() => {
+    async function fetchData() {
+      await axios.get("http://localhost:3500/verbalise").then((res) => {
+        setParagraph(res.data);
+      });
+    }
+    fetchData();
+  }, []);
+
+  if (paragraph) {
     return (
-      <select onChange={this.onChange}>
-        <option value="Messi">
-          Lionel Messi
-        </option>
-        <option value="Kanye">
-          Kanye West
-        </option>
-        <option value="Brad Pitt">
-          Brad Pitt
-        </option>
-      </select>
+      <>
+        {/* <select value={queryInput} onChange={() => handleSelectChange()}> */}
+        <select onChange={handleSelectChange}>
+          <option value="Lionel Messi">Lionel Messi</option>
+          <option value="Cristiano Ronaldo">Cristiano Ronaldo</option>
+        </select>
+        setQueryInput
+        <h2 className="title">Query selected: {queryInput}</h2>
+        <button
+          type="button"
+          className="resultsButton"
+          onClick={() => showTextResults(paragraph)}
+        >
+          Click to see Results
+        </button>
+        <div className="paragraphBox">
+          <p>{textResults}</p>
+        </div>
+      </>
     );
   }
+
+
+  return (
+    <>
+      {/* <select value={queryInput} onChange={() => handleSelectChange()}> */}
+      <select onChange={handleSelectChange}>
+          <option value="Lionel Messi">Lionel Messi</option>
+          <option value="Cristiano Ronaldo">Cristiano Ronaldo</option>
+        </select>
+      <h2 className="title">Query selected: {queryInput}</h2>
+      <button
+        type="button"
+        className="resultsButton"
+        onClick={() => showTextResults(paragraph)}
+      >
+        Click to see Results
+      </button>
+      <div className="paragraphBox">
+        <p>Loading...</p>
+      </div>
+    </>
+  );
 }
+export default StartQuery;
