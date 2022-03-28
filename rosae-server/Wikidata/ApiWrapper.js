@@ -23,7 +23,6 @@ const headers = { Accept: "application/sparql-results+json" };
 export const queryWikidataWithSparql = async (name) => {
   let parsedData = [];
   let query = sparqlQueryB + subjects.get(name) + sparqlQueryE;
-  console.log(code);
   let dynamicURL =
     "https://query.wikidata.org/sparql?query=" + encodeURIComponent(query);
   await axios
