@@ -13,6 +13,7 @@ app.get("/", (req, res) => {
 app.get("/verbalise/:name", async (req, res) => {
   const knowledgeGraph = await queryWikidataWithSparql(req.params.name);
   const sentences = await verbaliseSentences(knowledgeGraph);
+<<<<<<< HEAD
   return res.send({
     trouples: knowledgeGraph,
     sentences: sentences
@@ -20,6 +21,9 @@ app.get("/verbalise/:name", async (req, res) => {
       .replaceAll("</p>", "")
       .replaceAll(".", ". "),
   });
+=======
+  return res.send(sentences.replaceAll("<p>", "").replaceAll("</p>", "").replaceAll(".", ". ").replaceAll(":", ": "));
+>>>>>>> 59b8318 (improveOfVerbalisation)
 });
 
 app.listen(port, () => {
