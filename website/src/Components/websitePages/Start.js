@@ -16,8 +16,9 @@ function StartQuery() {
     await axios
       .get(`http://localhost:3500/verbalise/${queryInput}`)
       .then((res) => {
-        setTextResults(res.data);
+        setTextResults(res.data.sentences);
         console.log(res.data);
+        // res.data.trouples will give you the trouples
       });
   };
 
