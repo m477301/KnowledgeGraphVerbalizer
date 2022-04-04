@@ -1,58 +1,60 @@
 import React from "react";
-import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import "./Start.css";
-import { FaTruckLoading } from "react-icons/fa";
+import Speech from "./Speech";
+
 function StartQuery() {
-  const [paragraph, setParagraph] = useState(null);
   const [textResults, setTextResults] = useState(
     "Results will be shown here..."
   );
+  const [queryInput, setQueryInput] = useState("Ronaldo");
 
-  const showTextResults = (results) => setTextResults(results);
-  useEffect(() => {
-    async function fetchData() {
-      await axios.get("http://localhost:3500/verbalise/Messi").then((res) => {
-        setParagraph(res.data);
+  const showTextResults = async () => {
+    setTextResults("Loading...");
+    await axios
+      .get(`http://localhost:3500/verbalise/${queryInput}`)
+      .then((res) => {
+        setTextResults(res.data);
+        console.log(res.data);
       });
-    }
-    fetchData();
-  }, []);
+  };
 
-  if (paragraph) {
-    return (
-      <>
-        <h2 className="title">Query selected: Lionel Messi</h2>
-        <button
-          type="button"
-          className="resultsButton"
-          onClick={() => showTextResults(paragraph)}
-        >
-          Click to see Results
-        </button>
-        <div className="paragraphBox">
-          <p>{textResults}</p>
-        </div>
-      </>
-    );
+  function handleSelectChange(event) {
+    setQueryInput(event.target.value);
   }
 
   return (
-    <>
-      <h2 className="title">Query selected: Lionel Messi</h2>
-      <button
-        type="button"
-        className="resultsButton"
-        onClick={() => showTextResults(paragraph)}
-      >
-        Click to see Results
-      </button>
-      <div className="paragraphBox">
-        <p>Loading...</p>
+    <div className="StartPage">
+      <div className="QueryControl">
+        <h2 className="title">Query selected: {queryInput}</h2>
+        <select onChange={handleSelectChange} className="SelectComponent">
+          <option value="Ronaldo">Cristiano Ronaldo</option>
+          <option value="Messi">Lionel Messi</option>
+          <option value="Mbappe">Mbappe</option>
+          <option value="Haaland">Haaland</option>
+          <option value="Bellingham">Bellingham</option>
+          <option value="Reus">Reus</option>
+          <option value="Malen">Malen</option>
+          <option value="Saka">Saka</option>
+          <option value="Bony">Bony</option>
+        </select>
+        <button
+          type="button"
+          className="resultsButton"
+          onClick={() => showTextResults()}
+        >
+          Click to see Results
+        </button>
       </div>
-    </>
+      <div className="paragraphBox">
+        <div className="AudioSymbol">
+          <Speech paragraph={textResults} />
+        </div>
+        <p>{textResults}</p>
+      </div>
+    </div>
   );
 }
 
