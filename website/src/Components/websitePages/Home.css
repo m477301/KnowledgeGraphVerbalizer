@@ -1,61 +1,65 @@
-.button{
-    background-color: black;
-    color:white;
-    font-size: 16px;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    width: 20%;
-    font-family:Arial, Helvetica, sans-serif;
-    position: inherit;
+.homepage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
 }
-.button:hover{
-    background-color:white;
-    color: black;
+.button {
+  background-color: rgb(9, 9, 87);
+  color: white;
+  font-size: 16px;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  width: 50%;
+  font-family: Arial, Helvetica, sans-serif;
+  position: inherit;
+  border-radius: 1rem;
 }
-
-  /* vh= view height- whats veiwable in the browser
-  z-index= allows it to fall in or behind elements + has to be with absoulte */
-.homeImage{
-    position: absolute;
-    top:0;
-    right:0;
-    left:30em;
-    width: 60%;
-    margin-top: 5em;
-    height:80vh;
-    z-index:-1;
-    background-size: contain;
-    background-position-x:20%;
-    background-position-y:20%;
-
+.button:hover {
+  background-color: rgb(24, 24, 165);
+  color: white;
 }
 
-.hero{
-    color: black;
-    height: 90vh;
+.homeImage {
+  margin-top: 5em;
+  z-index: -1;
+  width: 50vh;
 }
 
-h1{
-    font-size:4rem;
-    margin-top:2em;
+.hero {
+  color: black;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-top: 2em;
+  line-height: 5.3rem;
+}
+
+@media only screen and (min-width: 900px) {
+  .homepage {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .homeImage {
+    width: 50vw;
+  }
+  h1 {
+    font-size: 4rem;
+    margin-top: 3em;
+    margin-left: 0.5em;
     line-height: 5.3rem;
-}
-
-@media only screen and (min-width:600px){
-    h1{
-        font-size:4rem;
-        margin-top:3em;
-        margin-left: 0.5em;
-        line-height: 5.3rem;
-    }
-    .button{
-        margin-left: 6em;
-    }
-    .button:hover{
-        background-color:white;
-        color: black;
-        border:3px black;
-    }
-   
-
+  }
+  .button {
+    margin-left: 6em;
+    width: 50%;
+  }
+  .button:hover {
+    background-color: rgb(24, 24, 165);
+    color: white;
+    border: 3px white;
+  }
 }

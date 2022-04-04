@@ -1,128 +1,128 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 
-.logo{
-    /* em= measuremnt for margin and padding 
+.logo {
+  /* em= measuremnt for margin and padding 
     1em=16 pixels
     rem= sizing for font sizes that are relative*/
-    margin:1em;
-    font-family: 'Poppins' sans-serif;
-    text-decoration:none;
-    font-size:2rem;
-    color:black;
-    font-weight:bold;
-    
+  margin: 1em;
+  font-family: "Poppins" sans-serif;
+  text-decoration: none;
+  font-size: 2rem;
+  color: white;
+  font-weight: bold;
 }
-.navBar{
-    display: flex;
-    justify-content: space-between;
-    background-color:rgb(73, 73, 238);
-    height: 90px;
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(73, 73, 238);
+  height: 90px;
 }
-.menuBars{
-    color:black;
-    width: 2em;
-    margin-top:0.5em;
-    font-size:2.5rem;
-    cursor: pointer;
-    
+.menuBars {
+  width: 2em;
+  margin-top: 0.5em;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: white;
 }
 /* float is a way of pushing things ot the right*/
-.closeMenuBars{
-    float: right;
-    margin: 3em;
-    width:2.5em;
-
+.closeMenuBars {
+  float: right;
+  margin: 3em;
+  width: 2.5em;
 }
 .navBarToggle {
-    background-color: white;
-    width: 30%;
-    height: 80px;
-    display:flex;
-    justify-content: left;
-    align-items: center;
-  }
-  /*navMenu is the drop down that contains items to click on */
-.navMenu{
-    position: fixed;
-    right:0;
-    top:0;
-    background-color: whitesmoke;
-    height: 100vh;
-    width:50%;
-    text-transform: uppercase;
-    z-index: 2;
-    transform: translateX(100%);
-    transition: transform .5s ease-in-out;
-
+  background-color: white;
+  width: 30%;
+  height: 80px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
-.navMenu.active{
-    transform: translateX(0%);
+/*navMenu is the drop down that contains items to click on */
+.navMenu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: whitesmoke;
+  height: 100vh;
+  width: 50%;
+  text-transform: uppercase;
+  z-index: 2;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in-out;
+}
+.navMenu.active {
+  transform: translateX(0%);
 }
 
 /*menuLinks is the contents of the menu*/
 .menuLinks {
-    padding: 0;
-    list-style-type: none;
-    margin-top:2em;
+  padding: 0;
+  list-style-type: none;
+  margin-top: 2em;
 }
 /* the individual options a user can click in the menu */
-.menuLinks a{
-    color: black;
-    text-decoration:none;
-    display: block;
-    align-items: center;
-    padding-top: 2em;
-    padding-left:4em;
-    padding-bottom:2em;
-} 
-.menuLinks a:hover{
-    background-color: rgb(95, 218, 70);
+.menuLinks a {
+  text-decoration: none;
+  display: block;
+  align-items: center;
+  padding-top: 2em;
+  padding-left: 4em;
+  padding-bottom: 2em;
 }
 
-.navMenuItems{
-    width:100%;
+.menuLinks a span {
+  color: black;
+}
+.menuLinks a:hover {
+  background-color: rgb(133, 133, 241);
+}
+
+.navMenuItems {
+  width: 100%;
 }
 
 span {
-    margin-right: 16px;
+  margin-right: 16px;
+}
+
+@media only screen and (min-width: 900px) {
+  .menuBars {
+    display: none;
+  }
+  .navMenu {
+    transform: translateX(0);
+    position: unset;
+    display: block;
+    width: auto;
+    height: auto;
+    background: none;
+  }
+  .closeMenuBars {
+    display: none;
+  }
+  .navMenuItems {
+    display: flex;
+  }
+  .menuLinks {
+    margin: 0;
+  }
+  .menuLinks a {
+    margin-top: 0.5em;
+    padding-top: 1.5em;
+    padding-left: 0.5em;
+    padding-right: 0.3em;
+    padding-bottom: 1.5;
+    align-items: center;
   }
 
-@media only screen and (min-width:900px){
-    .menuBars{
-        display: none;
-        
-    }
-    .navMenu{
-        transform: translateX(0);
-        position: unset;
-        display: block;
-        width: auto;
-        height: auto;
-        background: none;
-    }
-    .closeMenuBars{
-        display: none;
-    }
-    .navMenuItems{
-        display: flex;
-
-    }
-    .menuLinks{
-        margin:0;
-    }
-    .menuLinks a{
-        margin-top: 0.5em;
-        padding-top:1.5em;
-        padding-left: 0.5em;
-        padding-right: 0.3em;
-        padding-bottom: 1.5;
-        align-items: center;
-
-    }
-    .navBarToggle{
-        display: none;
-    }
-    .menuLinks a:hover{
-        background-color: white;
-    }
+  .menuLinks a span {
+    color: white;
+  }
+  .navBarToggle {
+    display: none;
+  }
+  .menuLinks a:hover {
+    background-color: rgb(24, 24, 165);
+  }
 }
