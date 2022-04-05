@@ -3,7 +3,7 @@
 
 # Setup
 
-In order to setup the environment locally you must use to terminals, one to set up the website and one to setup the server.
+In order to setup the environment locally you must use two seperate terminals, one to set up the website and one to setup the server.
 
 # Website Setup
 
