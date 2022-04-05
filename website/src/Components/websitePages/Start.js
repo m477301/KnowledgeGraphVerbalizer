@@ -4,12 +4,16 @@ import { useState } from "react";
 import axios from "axios";
 import "./Start.css";
 import Speech from "./Speech";
+import Grid from "./Grid";
 
 function StartQuery() {
   const [textResults, setTextResults] = useState(
     "Results will be shown here..."
   );
   const [queryInput, setQueryInput] = useState("Ronaldo");
+  const [gridInput, setGridInput] = useState([
+    { Subject: "None", Predicate: "None", Object: "None" },
+  ]);
 
   const showTextResults = async () => {
     setTextResults("Loading...");
@@ -17,7 +21,8 @@ function StartQuery() {
       .get(`http://localhost:3500/verbalise/${queryInput}`)
       .then((res) => {
         setTextResults(res.data.sentences);
-        console.log(res.data);
+        setGridInput(res.data.trouples);
+        // console.log(res.data);
         // res.data.trouples will give you the trouples
       });
   };
@@ -55,6 +60,8 @@ function StartQuery() {
         </div>
         <p>{textResults}</p>
       </div>
+
+      <Grid gridInfo={gridInput} />
     </div>
   );
 }
