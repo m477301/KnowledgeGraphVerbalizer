@@ -1,6 +1,7 @@
 
 # Knoweledge Graph Verbalizer
-
+This Knowledge graph verbalizer is deisgned to verbalize wikidata queries and was done as part of a project by trinity college students.
+The team consisted of Matteo Mcguinness, Jamie McEvoy, Aaron Readman, Paddi Hua, Mark Healy, Cianna MacMahon and Jason Wood.
 # Setup
 
 In order to setup the environment locally you must use two seperate terminals, one to set up the website and one to setup the server.
