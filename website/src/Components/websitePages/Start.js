@@ -14,6 +14,7 @@ function StartQuery() {
   const [gridInput, setGridInput] = useState([
     { Subject: "None", Predicate: "None", Object: "None" },
   ]);
+  const [show, setShow] = useState(false);
 
   const showTextResults = async () => {
     setTextResults("Loading...");
@@ -54,14 +55,19 @@ function StartQuery() {
           Click to see Results
         </button>
       </div>
+      <p>The information after verbalisation is shown in the box below.</p>
       <div className="paragraphBox">
         <div className="AudioSymbol">
           <Speech paragraph={textResults} />
         </div>
         <p>{textResults}</p>
       </div>
-
-      <Grid gridInfo={gridInput} />
+      <div className="showHide">
+        <p>The information before verbalisation is shown in the table below.</p>
+        <button onClick={() => setShow(true)}>Show</button>
+        <button onClick={() => setShow(false)}>Hide</button>
+        {show ? <Grid gridInfo={gridInput} /> : null}
+      </div>
     </div>
   );
 }
