@@ -59,10 +59,12 @@ function StartQuery() {
       <div className="paragraphBox">
         <div className="AudioSymbol">
           <Speech paragraph={textResults} />
+          {/*The Text to speech element. Takes in the text results*/}
         </div>
         <p>{textResults}</p>
       </div>
       <div className="showHide">
+        {/* The table element goes in here. Two buttons exist to either hide on click or show on click. The grid takes the res.data.trouples information as gridInput*/}
         <p>The information before verbalisation is shown in the table below.</p>
         <button onClick={() => setShow(true)}>Show</button>
         <button onClick={() => setShow(false)}>Hide</button>

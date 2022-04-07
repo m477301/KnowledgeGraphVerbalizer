@@ -1,6 +1,7 @@
 import React from "react";
 import "./Grid.css";
 
+/*A simple table where the trouple values are displayed with a map function. */
 const Grid = (props) => {
   return (
     <div className="Table">
