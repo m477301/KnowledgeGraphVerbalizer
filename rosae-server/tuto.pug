@@ -5,35 +5,49 @@ mixin object
   | is
   | #{knowledgeGraph.object}
 
-mixin name
-  | His name is 
-  | #[+value(knowledgeGraph)]. 
+<<<<<<< HEAD
+=======
+mixin intro
+  synz
+    syn
+      | Welcome to the server, these are your knowedge graph verbalisation: 
+    syn
+      | Welcome! Here is verbalisation for you: 
+    syn
+      | Your knowedge graph verbalisation are: 
 
-mixin knowledgeGraph_ref(obj, params)
-  | #{obj.subject} 's
+>>>>>>> 59b8318 (improveOfVerbalisation)
+mixin name
+  | The subject is
+  | #{knowledgeGraph.subject}
 
 mixin knowledgeGraph_refexpr(obj, params)
   synz {mode:'sequence'}
     syn
-      | Lionel Messi's
+      | This subject's 
     syn
-      | This person's
-    syn
-      | His
-    syn
-      | This human's
+      | The subject's 
 
+<<<<<<< HEAD
+=======
+p #[+intro]
+
+mixin printName
+  | #[+name]
+
+>>>>>>> 59b8318 (improveOfVerbalisation)
 mixin printKnowedgeGraph
   | #[+value(knowledgeGraph_refexpr)]
   | #[+predicate]
   | #[+object] .
 
-- let knowledgeGraph;
+
+- let knowledgeGraph = knowledgeGraphs[0];
+p #[+name] .
+
 each knowledgeGraphELT in knowledgeGraphs
   - knowledgeGraph = knowledgeGraphELT;  
 
   p 
     -
-      knowledgeGraph.ref = knowledgeGraph_ref;
-      knowledgeGraph.refexpr = knowledgeGraph_refexpr;
     | #[+printKnowedgeGraph]
