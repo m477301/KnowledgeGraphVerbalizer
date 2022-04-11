@@ -4,12 +4,17 @@ import { useState } from "react";
 import axios from "axios";
 import "./Start.css";
 import Speech from "./Speech";
+import Grid from "./Grid";
 
 function StartQuery() {
   const [textResults, setTextResults] = useState(
     "Results will be shown here..."
   );
   const [queryInput, setQueryInput] = useState("Ronaldo");
+  const [gridInput, setGridInput] = useState([
+    { Subject: "None", Predicate: "None", Object: "None" },
+  ]);
+  const [show, setShow] = useState(false);
 
   const showTextResults = async () => {
     setTextResults("Loading...");
@@ -17,7 +22,8 @@ function StartQuery() {
       .get(`http://localhost:3500/verbalise/${queryInput}`)
       .then((res) => {
         setTextResults(res.data.sentences);
-        console.log(res.data);
+        setGridInput(res.data.trouples);
+        // console.log(res.data);
         // res.data.trouples will give you the trouples
       });
   };
@@ -49,11 +55,20 @@ function StartQuery() {
           Click to see Results
         </button>
       </div>
+      <p>The information after verbalisation is shown in the box below.</p>
       <div className="paragraphBox">
         <div className="AudioSymbol">
           <Speech paragraph={textResults} />
+          {/*The Text to speech element. Takes in the text results*/}
         </div>
         <p>{textResults}</p>
+      </div>
+      <div className="showHide">
+        {/* The table element goes in here. Two buttons exist to either hide on click or show on click. The grid takes the res.data.trouples information as gridInput*/}
+        <p>The information before verbalisation is shown in the table below.</p>
+        <button onClick={() => setShow(true)}>Show</button>
+        <button onClick={() => setShow(false)}>Hide</button>
+        {show ? <Grid gridInfo={gridInput} /> : null}
       </div>
     </div>
   );
