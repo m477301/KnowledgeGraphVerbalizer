@@ -5,18 +5,6 @@ mixin object
   | is
   | #{knowledgeGraph.object}
 
-<<<<<<< HEAD
-=======
-mixin intro
-  synz
-    syn
-      | Welcome to the server, these are your knowedge graph verbalisation: 
-    syn
-      | Welcome! Here is verbalisation for you: 
-    syn
-      | Your knowedge graph verbalisation are: 
-
->>>>>>> 59b8318 (improveOfVerbalisation)
 mixin name
   | The subject is
   | #{knowledgeGraph.subject}
@@ -28,14 +16,6 @@ mixin knowledgeGraph_refexpr(obj, params)
     syn
       | The subject's 
 
-<<<<<<< HEAD
-=======
-p #[+intro]
-
-mixin printName
-  | #[+name]
-
->>>>>>> 59b8318 (improveOfVerbalisation)
 mixin printKnowedgeGraph
   | #[+value(knowledgeGraph_refexpr)]
   | #[+predicate]
