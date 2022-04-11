@@ -6,15 +6,17 @@ mixin object
   | #{knowledgeGraph.object}
 
 mixin name
-  | The subject is
+  | His name is
   | #{knowledgeGraph.subject}
 
 mixin knowledgeGraph_refexpr(obj, params)
   synz {mode:'sequence'}
     syn
-      | This subject's 
+      | This person's
     syn
-      | The subject's 
+      | His/Her
+    syn
+      | #{knowledgeGraph.subject}
 
 mixin printKnowedgeGraph
   | #[+value(knowledgeGraph_refexpr)]
