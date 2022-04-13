@@ -6,6 +6,9 @@ import facebookImage from "./facebookImage.png";
 import twitterImage from "./twitterImage.jpeg";
 import githubImage from "./githubImage.png";
 
+/**
+ * Contact-- provides the information to be displayed on the 'Contact Us' website page
+ */
 function Contact() {
   return (
     <div className="ContactPage">
@@ -33,7 +36,7 @@ function Contact() {
 
         <section className="infoSection">
           <img src={githubImage} className="icons" alt="" />
-          Checkout our Github:
+          Checkout our Github: https://github.com/m477301/KnowledgeGraphVerbalizer.git
         </section>
       </div>
     </div>

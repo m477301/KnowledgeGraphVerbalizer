@@ -6,6 +6,12 @@ import "./Start.css";
 import Speech from "./Speech";
 import Grid from "./Grid";
 
+/**
+ * StartQuery-- allows the user to select a query from a list and instantly see 
+ *              the verbalised results 
+ * @returns A drop drop menu for a user to choose a query from and an ouput box where 
+ *          the results will be displayed
+ */
 function StartQuery() {
   const [textResults, setTextResults] = useState(
     "Results will be shown here..."
@@ -16,6 +22,10 @@ function StartQuery() {
   ]);
   const [show, setShow] = useState(false);
 
+
+  /**
+   * showTextResults-- fetches the verbalised results to be displayed for the user
+   */
   const showTextResults = async () => {
     setTextResults("Loading...");
     await axios
@@ -27,11 +37,17 @@ function StartQuery() {
         // res.data.trouples will give you the trouples
       });
   };
-
+/**
+ * handleSelectChange-- handles the user interaction by tracking their query selection so that the correct
+ *                      query is verbalised and displayed on the screen
+ *                      This is done by changing the useState of queryInput to the parameter of this function
+ * @param event-- the query that the user has selected
+ */
   function handleSelectChange(event) {
     setQueryInput(event.target.value);
   }
 
+{/*This returns all the information to be displayed on the 'Get started' website page */}
   return (
     <div className="StartPage">
       <div className="QueryControl">

@@ -7,6 +7,11 @@ import StartQuery from "./Components/websitePages/Start";
 import About from "./Components/websitePages/About";
 import Contact from "./Components/websitePages/Contact";
 
+
+/**
+ * App -- This returns all pages of our website so that it can be displayed when our app is launched.
+ * */
+
 function App() {
   return (
     <>

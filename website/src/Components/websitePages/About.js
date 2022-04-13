@@ -1,5 +1,9 @@
 import React from 'react'
 
+/**
+ * About-- returns the information to be displayed on the 'About us' website page when it
+ *        is clicked by the user
+ */
 function About() {
   return (
     <div className='about'>

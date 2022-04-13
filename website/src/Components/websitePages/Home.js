@@ -3,6 +3,10 @@ import imageOne from "./A-knowledge-graph-structure.png";
 import "./Home.css";
 import { Link } from "react-router-dom";
 
+/**
+ * Home-- returns information to be displayed on the home paage of our website
+ *        Includes the functionality of a button to bring the user straight to the 'Get started' page 
+ */
 function Home() {
   return (
     <div className="homepage">
