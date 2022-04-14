@@ -17,13 +17,13 @@ First we cd into the website folder
 `cd website`
 
 We then install on dependencies using
-`yarn install`
+`npm install`
 
 If you alread have yarn installed you can check by using
-`yarn --version`
+`npm --version`
 
 We then enter the following to begin
-`yarn start`
+`npm start`
 
 ## Server Setup
 
