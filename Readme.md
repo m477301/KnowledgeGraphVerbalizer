@@ -1,5 +1,5 @@
 
-# Knoweledge Graph Verbalizer
+# Knowledge Graph Verbalizer
 This Knowledge graph verbalizer is desIgned to verbalize wikidata queries and was done as part of a project by trinity college students.
 
 # Video Demo
