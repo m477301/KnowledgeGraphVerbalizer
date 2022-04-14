@@ -1,6 +1,9 @@
 import React from "react";
 
-
+/**
+ * Each item in the menu has an associated url to allow the user to switch between website
+ * pages
+ */
 export const MenuItems=[
     {
         title: 'Home',
