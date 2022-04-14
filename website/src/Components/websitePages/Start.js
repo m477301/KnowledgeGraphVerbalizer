@@ -52,6 +52,7 @@ function StartQuery() {
     <div className="StartPage">
       <div className="QueryControl">
         <h2 className="title">Query selected: {queryInput}</h2>
+        {/* return a dropdown menu from which the user can select queries and a change is recorded and made when an option is selected*/}
         <select onChange={handleSelectChange} className="SelectComponent">
           <option value="Ronaldo">Cristiano Ronaldo</option>
           <option value="Messi">Lionel Messi</option>

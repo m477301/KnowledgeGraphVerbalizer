@@ -1,9 +1,7 @@
 import React from 'react'
 
-/**
- * About-- returns the information to be displayed on the 'About us' website page when it
- *        is clicked by the user
- */
+//About
+//return text which briefly describes the project and the members of the team
 function About() {
   return (
     <div className='about'>
