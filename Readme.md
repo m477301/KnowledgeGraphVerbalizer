@@ -3,6 +3,8 @@
 This Knowledge graph verbalizer is desIgned to verbalize wikidata queries and was done as part of a project by trinity college students.
 
 # Video Demo
+https://user-images.githubusercontent.com/23319263/163379200-39694829-a351-46cf-9850-5b3fd984def9.mp4
+
 
 # Setup
 In order to setup the environment locally you must use two seperate terminals, one to set up the website and one to setup the server.
