@@ -1,5 +1,7 @@
 import React from 'react'
 
+//About
+//return text which briefly describes the project and the members of the team
 function About() {
   return (
     <div className='about'>
